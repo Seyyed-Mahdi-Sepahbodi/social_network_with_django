@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 
 # Register your models here.
 
@@ -10,3 +10,9 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('updated_at',)
     raw_id_fields = ('user',)
 
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['user', 'post', 'created_at', 'is_reply']
+    raw_id_fields = ['user', 'post', 'reply']
+
+admin.site.register(Comment, CommentAdmin)

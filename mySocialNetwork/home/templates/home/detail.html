@@ -7,6 +7,6 @@
         <a href="{% url 'home:post_update' post.id %}" class="btn btn-warning">Update</a>    
     {% endif %}
 
-    <p><a href="{% url 'account:user_profile' user.id %}">{{ post.user.username }}</a> - {{ post.updated_at|date:"M Y" }}</p> 
+    <p><a href="{% url 'account:user_profile' post.user.id %}">{{ post.user.username }}</a> - {{ post.updated_at|date:"M Y" }}</p> 
     <p>{{ post.body }}</p> 
 {% endblock content %}

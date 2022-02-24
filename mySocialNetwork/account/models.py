@@ -16,4 +16,4 @@ class Relation(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     age = models.PositiveSmallIntegerField(default=0)
-    biograohy = models.TextField(blank=True, null=True)
+    biography = models.TextField(blank=True, null=True)

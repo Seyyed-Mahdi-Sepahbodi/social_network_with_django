@@ -9,6 +9,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 from .models import Relation
 
+
 # Create your views here.
 
 class UserRegisterView(View):
@@ -147,3 +148,5 @@ class EditUserInformationView(LoginRequiredMixin, View):
             request.user.save()
             messages.success(request, 'Profile eidted successfully', 'success')
         return redirect('account:user_profile', request.user.id)
+
+

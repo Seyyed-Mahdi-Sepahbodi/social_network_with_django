@@ -1,10 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block CSS_files %}
+    <link rel="stylesheet" href="{% static 'account/css/login.css' %}">
+{% endblock CSS_files %}
+
 
 {% block content %}
-    <h2>Login user</h2>
-    <form action="" method="post" class="col-md-6" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Login">
-    </form>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+        <div class="loginbox bg-white">
+            <div class="loginbox-title">SIGN IN</div>
+            <div class="loginbox-social">
+                <div class="social-title ">Connect with Your Social Accounts</div>
+                <div class="social-buttons">
+                    <a href="" class="button-facebook">
+                        <i class="social-icon fa fa-facebook"></i>
+                    </a>
+                    <a href="" class="button-twitter">
+                        <i class="social-icon fa fa-twitter"></i>
+                    </a>
+                    <a href="" class="button-google">
+                        <i class="social-icon fa fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="loginbox-or">
+                <div class="or-line"></div>
+                <div class="or">OR</div>
+            </div>
+            <form action="" method="post" class="col-md-12" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="loginbox-forgot">
+                    <a href="">Forgot Password?</a>
+                </div>
+                <div class="loginbox-submit">
+                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
 {% endblock content %}

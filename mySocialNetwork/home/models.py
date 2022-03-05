@@ -24,6 +24,9 @@ class Post(models.Model):
     def like_counts(self):
         return self.plikes.count()
 
+    def comments_counts(self):
+        return self.pcomments.count()
+
     def user_can_like(self, user):
         user_like = user.ulikes.filter(post=self)
         if user_like.exists():

@@ -17,3 +17,12 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     age = models.PositiveSmallIntegerField(default=0)
     biography = models.TextField(blank=True, null=True)
+
+    def followers_counts(self):
+        return self.user.followings.count()
+
+    def followings_counts(self):
+        return self.user.followers.count()
+
+    def posts_counts(self):
+        return self.user.posts.count()

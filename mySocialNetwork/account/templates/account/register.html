@@ -1,10 +1,39 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block CSS_files %}
+    <link rel="stylesheet" href="{% static 'account/css/register.css' %}">
+{% endblock CSS_files %}
+    
 
 {% block content %}
-    <h2>Register user</h2>
-    <form action="" method="post" class="col-md-6" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Register">
-    </form>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                <div class="d-table-cell align-middle">
+
+                    <div class="text-center mt-4">
+                        <h1 class="h2">Get started</h1>
+                        <p class="lead">
+                            Start creating the best possible user experience for you customers.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-container m-sm-4">
+                                <form action="" method="post" class="col-md-6" novalidate>
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="submit" class="btn btn-lg btn-primary" value="Register">                                
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
